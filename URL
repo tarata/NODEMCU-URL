@@ -9,10 +9,10 @@
 #include <ESP8266WiFi.h>
 
 
-const char* ssid     = "TP-LINK_7462";
-const char* password = "succhialaminchia15!";
+const char* ssid     = "WIFI NAME";
+const char* password = "PWD";
 
-const char* host = "pubblicitamilano.it";
+const char* host = "DOMINIO.it";
 const char* streamId   = "....................";
 const char* privateKey = "....................";
 //------
