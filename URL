@@ -13,9 +13,9 @@ const char* ssid     = "WIFI NAME";
 const char* password = "PWD";
 
 const char* host = "DOMINIO.it";
-const char* streamId   = "....................";
-const char* privateKey = "....................";
-//------
+//const char* streamId   = "....................";
+//const char* privateKey = "....................";
+//-STRINGA CHE CODIFICA SPAZIO E CARATTERI SPECIALI-----
 
 String urldecode(String str)
 {
@@ -94,7 +94,9 @@ unsigned char h2int(char c)
     }
     return(0);
 }
-//------
+//--FINE DECODIFICA----
+
+
 void setup() {
   Serial.begin(115200);
   delay(10);
@@ -135,18 +137,14 @@ void loop() {
     Serial.println("connection failed");
     return;
   }
-  
+  //----------------STRINGA URL CON SPAZIO
   // We now create a URI for the request , 8.887788
   String url = "/track/requests.php?a=upload&u=test2&p=police";
  url += "&lat=45.580203&long=8.887788&do=2016-10-16";
 url += " ";
  url += "18:00:00&tn=nodemcu&db=8&ang=0.0&sp=0.0&alt=10.0";
-//url += "";
-//
-// url += "";
-//  
 
-//-----------
+//--------TEST SU SERIALE CODIFICA E DECOSDIFICA---
 
 String encoded=urlencode(url);
 Serial.println(encoded);
@@ -162,7 +160,8 @@ Serial.println(encoded);
 //  String decoded=urldecode(encoded);
 //  Serial.println(decoded);
 //----------
-  Serial.print("Requesting URL: ");
+ 
+ Serial.print("Requesting URL: ");
   Serial.println(url);
   
   // This will send the request to the server
